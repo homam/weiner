@@ -26,3 +26,17 @@ h2 {
 .skills .list li:hover {
   color: red;
 }
+article {
+  margin: auto;
+  max-width: 680px;
+  padding: 0 20px;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+svg line {
+  stroke: black;
+}

@@ -11,3 +11,11 @@ $ ()->
   $skill = d3.select('.skills .list').selectAll('li').data(skills)
   .enter().append('li')
   .text((s) -> s.name + ' ').attr('class', (s) -> ['a', 'b', 'c'][s.size])
+
+
+  height = $('body').outerHeight()
+  $svg = d3.select('body').append('svg').attr('width',200).attr('height', height)
+  $('svg').prependTo(document.body)
+  data = (i for i in [0..height] by 10)
+  $svg.selectAll('.line').data(data).enter()
+  .append('line').attr('y1', (d) -> d).attr('y2', (d) -> d).attr('x1', 0).attr('x2', 10)
