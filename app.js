@@ -28,16 +28,18 @@
 
   app.use(express.favicon());
 
-  app.use(express["static"](__dirname + '/public'));
-
   app.use(require('less-middleware')({
-    src: __dirname + '/public'
+    src: 'public',
+    dest: 'public',
+    prefix: '/public'
   }));
 
   app.use(require('connect-coffee-script')({
     src: __dirname + '/public',
     bare: true
   }));
+
+  app.use(express["static"](__dirname + '/public'));
 
   app.get('/', (require('./routes')).index);
 

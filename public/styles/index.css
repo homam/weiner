@@ -1,0 +1,28 @@
+body {
+  font-family: Helvetica, Calibri, sans-serif;
+  font-size: 1em;
+}
+h2 {
+  color: #71023b;
+}
+.skills .list {
+  margin: 0 auto 0 auto;
+  padding: 0;
+  text-align: justify;
+}
+.skills .list li {
+  margin: 0;
+  padding: 0 0 0 0 ;
+  display: inline;
+  -webkit-transition: .5s;
+  -webkit-transform: rotate(0);
+}
+.skills .list li.a {
+  font-size: 140%;
+}
+.skills .list li.b {
+  font-size: 120%;
+}
+.skills .list li:hover {
+  color: red;
+}
