@@ -3,10 +3,46 @@ body {
   font-size: 1em;
 }
 
+h1 {
+  font-size: 1.6em;
+
+  body.fancy & {
+    text-align: right;
+    -webkit-transform: rotateZ(-1deg);
+    margin: 20px 0 -20px 0;
+    padding: 0;
+  }
+}
+
 h2 {
   color: #B33168;
-  border-bottom: solid 1px #257681;
+  font-size: 1.4em;
+  //border-bottom: solid 1px #257681;
 }
+
+h2:after {
+  content: ' ';
+  display: block;
+  border-bottom: solid 1px #257681;
+  margin-top: 8px;
+}
+
+body.fancy {
+
+  h2:after {
+    margin-top: 14px;
+  }
+
+  section:nth-of-type(2n-1) h2:after {
+    -webkit-transform: rotateZ(1deg);
+  }
+  section:nth-of-type(2n) h2:after {
+    -webkit-transform: rotateZ(-1deg);
+    margin-top:0px;
+  }
+
+}
+
 h3 {
   color: #D2833A;
 }
@@ -49,5 +85,10 @@ svg {
 
   line {
     stroke: black;
+  }
+  path {
+    stroke: purple;
+    stroke-width: 4px;
+    fill:none;
   }
 }

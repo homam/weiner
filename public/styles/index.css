@@ -2,9 +2,34 @@ body {
   font-family: Helvetica, Calibri, sans-serif;
   font-size: 1em;
 }
+h1 {
+  font-size: 1.6em;
+}
+body.fancy h1 {
+  text-align: right;
+  -webkit-transform: rotateZ(-1deg);
+  margin: 20px 0 -20px 0;
+  padding: 0;
+}
 h2 {
   color: #B33168;
+  font-size: 1.4em;
+}
+h2:after {
+  content: ' ';
+  display: block;
   border-bottom: solid 1px #257681;
+  margin-top: 8px;
+}
+body.fancy h2:after {
+  margin-top: 14px;
+}
+body.fancy section:nth-of-type(2n-1) h2:after {
+  -webkit-transform: rotateZ(1deg);
+}
+body.fancy section:nth-of-type(2n) h2:after {
+  -webkit-transform: rotateZ(-1deg);
+  margin-top: 0px;
 }
 h3 {
   color: #D2833A;
@@ -46,4 +71,9 @@ svg {
 }
 svg line {
   stroke: black;
+}
+svg path {
+  stroke: purple;
+  stroke-width: 4px;
+  fill: none;
 }
