@@ -13,6 +13,75 @@ $ ()->
   .text((s) -> s.name + ' ').attr('class', (s) -> ['a', 'b', 'c'][s.size])
 
 
+
+  drawSuperFormula = () ->
+    height = 300 # $('body').outerHeight()
+    width = 400 #$('body').outerWidth()
+
+
+    $svg = d3.select('body').append('svg').attr('width',width).attr('height', height)
+    $('svg').prependTo(document.body)
+    size = 1000
+
+    big = d3.superformula().type('star').size(size*50).segments(500)
+
+    $svg.append('path').attr('class', 'superf')
+    .attr('transform', 'translate(200,140)').attr('d', big)
+
+    lazy = () ->
+      top = $(document).scrollTop()
+      #if(top < 0) then return null
+      $svg.select('.superf').transition().duration(2)
+      .attr('d', big.param('m', (top + 500)* .01)#.param('n1', top).param('a', top).param('b', top*100)
+      )
+
+    lazy()
+
+    $(window).on('scroll', lazy)
+
+  drawSuperFormula()
+
+
+  drawSwarm = () ->
+    data = d3.range(100).map(->
+      xloc: 0
+      yloc: 0
+      xvel: 0
+      yvel: 0
+    )
+    width = 960
+    height = 300
+    angle = 2 * Math.PI
+    x = d3.scale.linear().domain([-5, 5]).range([0, width])
+    y = d3.scale.linear().domain([-5, 5]).range([0, height])
+    time0 = Date.now()
+    time1 = undefined
+    canvas = d3.select("body").append("canvas").attr("width", width).attr("height", height)
+    context = canvas.node().getContext("2d")
+    context.fillStyle = "steelblue"
+    context.strokeStyle = "#666"
+    context.strokeWidth = 1.5
+    d3.timer ->
+
+      context.clearRect 0, 0, width, height
+      data.forEach (d) ->
+        d.xloc += d.xvel
+        d.yloc += d.yvel
+        d.xvel += 0.04 * (Math.random() - .5) - 0.05 * d.xvel - 0.0005 * d.xloc
+        d.yvel += 0.04 * (Math.random() - .5) - 0.05 * d.yvel - 0.0005 * d.yloc
+        context.beginPath()
+        context.arc x(d.xloc), y(d.yloc), Math.min(1 + 1000 * Math.abs(d.xvel * d.yvel), 10), 0, angle
+        context.fill()
+        context.stroke()
+
+      time1 = Date.now()
+
+      time0 = time1
+      return false
+
+  #drawSwarm()
+
+
   fancySVG = () ->
 
     xScale = (p) -> p[0] * 4 +4

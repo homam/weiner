@@ -21,16 +21,6 @@ h2:after {
   border-bottom: solid 1px #257681;
   margin-top: 8px;
 }
-body.fancy h2:after {
-  margin-top: 14px;
-}
-body.fancy section:nth-of-type(2n-1) h2:after {
-  -webkit-transform: rotateZ(1deg);
-}
-body.fancy section:nth-of-type(2n) h2:after {
-  -webkit-transform: rotateZ(-1deg);
-  margin-top: 0px;
-}
 h3 {
   color: #D2833A;
 }
@@ -63,17 +53,43 @@ article {
   max-width: 680px;
   padding: 0 20px;
 }
+@media only screen and (max-device-width: 480px) {
+  body,
+  article {
+    max-width: 100%;
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding-left: 1em;
+  }
+}
+body.fancy h2:after {
+  margin-top: 14px;
+}
+body.fancy section:nth-of-type(2n-1) h2:after {
+  -webkit-transform: rotateZ(1deg);
+}
+body.fancy section:nth-of-type(2n) h2:after {
+  -webkit-transform: rotateZ(-1deg);
+  margin-top: 0px;
+}
+canvas {
+  position: fixed;
+  bottom: -150px;
+  z-index: -1;
+}
 svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  bottom: -100px;
+  right: -200px;
   z-index: -1;
 }
 svg line {
   stroke: black;
 }
 svg path {
-  stroke: purple;
+  stroke: rgba(247, 247, 247, 0.9);
   stroke-width: 4px;
   fill: none;
 }
