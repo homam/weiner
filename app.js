@@ -43,6 +43,8 @@
 
   app.get('/', (require('./routes')).index);
 
+  app.get('/super', (require('./routes'))["super"]);
+
   http.createServer(app).listen(app.get('port'), function() {
     return console.log("express started at port " + app.get('port'));
   });

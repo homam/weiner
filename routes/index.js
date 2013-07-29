@@ -6,4 +6,10 @@
     });
   };
 
+  exports["super"] = function(req, res) {
+    return res.render('super', {
+      title: 'super shapes'
+    });
+  };
+
 }).call(this);

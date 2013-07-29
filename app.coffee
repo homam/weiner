@@ -24,6 +24,7 @@ app.use require('connect-coffee-script')
 app.use express.static __dirname + '/public'
 
 app.get '/', (require './routes').index
+app.get '/super', (require './routes').super
 
 
 
