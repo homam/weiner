@@ -8,6 +8,17 @@ h1 {
   text-align: right;
   margin-bottom: -1.5ex;
 
+  &:after {
+    bottom: -100%;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(10px);
+    z-index: -1;
+  }
+
   @media screen and (max-width:500px)
   {
     text-align: left;

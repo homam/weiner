@@ -23,7 +23,7 @@ $ ()->
 
     $svg = d3.select('body').selectAll('svg').data(d3.range(0,max))
     $svg.enter().append('svg').attr('width',width).attr('height', height)
-    .style("top", (d,i) -> (i)*2*120 )
+    .style("top", (d,i) -> ((i)*2*120)+"px" )
     $('svg').prependTo($("#fx"))
     size = 1000
 
