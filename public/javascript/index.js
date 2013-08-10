@@ -3,7 +3,7 @@
   $(function() {
     var $skill, drawSuperFormula, drawSwarm, fancySVG, skills;
 
-    skills = [['.NET', 'AJAX', 'MVC', 'C#', 'CSS', 'Casual Games', 'Distributed Syststems', 'Architecture', 'Scrum', 'SOA', 'SQL', 'Git', 'JavaScript', 'HTML5'], ['Cloud Computing', 'Simulations', 'Haskell', 'Canvas', 'SVG', 'Objective-C'], ['ActionScript', 'Flash', 'Mathematica', 'Python', 'Ruby', 'Visualization']];
+    skills = [['.NET', 'AJAX', 'MVC', 'C#', 'CSS', 'Casual Games', 'Distributed Syststems', 'Architecture', 'Scrum', 'SOA', 'SQL', 'Git', 'JavaScript', 'HTML5'], ['Cloud Computing', 'Simulations', 'Haskell', 'Canvas', 'SVG', 'Objective-C', 'Node.js'], ['ActionScript', 'Flash', 'Mathematica', 'Python', 'Ruby', 'Data Visualization']];
     skills = _(skills.map(function(s, i) {
       return s.map(function(a) {
         return {
@@ -25,20 +25,24 @@
       return ['a', 'b', 'c'][s.size];
     });
     drawSuperFormula = function() {
-      var $svg, big, height, lazy, size, width;
+      var $svg, big, height, lazy, max, size, width;
 
       height = 300;
       width = 400;
-      $svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
-      $('svg').prependTo(document.body);
+      max = Math.round(window.screen.height / (2 * 120));
+      $svg = d3.select('body').selectAll('svg').data(d3.range(0, max));
+      $svg.enter().append('svg').attr('width', width).attr('height', height).style("top", function(d, i) {
+        return i * 2 * 120;
+      });
+      $('svg').prependTo($("#fx"));
       size = 1000;
-      big = d3.superformula().type('star').size(size * 50).segments(500);
-      $svg.append('path').attr('class', 'superf').attr('transform', 'translate(200,140)').attr('d', big);
+      big = d3.superformula().type('star').size(size * 50).segments(400);
+      $svg.append('path').attr('class', 'superf').attr('transform', 'translate(0,140)').attr('d', big);
       lazy = function() {
         var top;
 
         top = $(document).scrollTop();
-        return $svg.select('.superf').transition().duration(2).attr('d', big.param('m', (top + 500) * .01));
+        return $svg.select('.superf').transition().duration(2).attr('d', big.param('m', (top * .001) + 1200 * .008));
       };
       lazy();
       return $(window).on('scroll', lazy);
@@ -151,8 +155,7 @@
       }, 2000);
       height = $('body').outerHeight();
       width = $('body').outerWidth();
-      $svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
-      $('svg').prependTo(document.body);
+      $svg = d3.select('body').selectAll('svg').datum([1, 2, 3, 4, 5]);
       window.draw = function() {
         var $path;
 
@@ -162,7 +165,6 @@
           return line(d) + (closePath ? 'Z' : '');
         });
       };
-      draw();
       return setInterval(function() {
         var data;
 

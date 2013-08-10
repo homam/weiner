@@ -1,8 +1,9 @@
 $ ()->
   skills = [
-    ['.NET', 'AJAX', 'MVC', 'C#', 'CSS', 'Casual Games', 'Distributed Syststems', 'Architecture', 'Scrum', 'SOA', 'SQL', 'Git', 'JavaScript', 'HTML5'],
-    ['Cloud Computing', 'Simulations', 'Haskell', 'Canvas', 'SVG', 'Objective-C'],
-    ['ActionScript', 'Flash', 'Mathematica', 'Python', 'Ruby', 'Visualization']
+    ['.NET', 'AJAX', 'MVC', 'C#', 'CSS', 'Casual Games', 'Distributed Syststems', 'Architecture',
+      'Scrum', 'SOA', 'SQL', 'Git', 'JavaScript', 'HTML5'],
+    ['Cloud Computing', 'Simulations', 'Haskell', 'Canvas', 'SVG', 'Objective-C', 'Node.js'],
+    ['ActionScript', 'Flash', 'Mathematica', 'Python', 'Ruby', 'Data Visualization']
   ]
 
   skills = _(skills.map((s,i) -> s.map (a) -> {name: a, size: i})).flatten()
@@ -18,21 +19,24 @@ $ ()->
     height = 300 # $('body').outerHeight()
     width = 400 #$('body').outerWidth()
 
+    max = Math.round window.screen.height/(2*120)
 
-    $svg = d3.select('body').append('svg').attr('width',width).attr('height', height)
-    $('svg').prependTo(document.body)
+    $svg = d3.select('body').selectAll('svg').data(d3.range(0,max))
+    $svg.enter().append('svg').attr('width',width).attr('height', height)
+    .style("top", (d,i) -> (i)*2*120 )
+    $('svg').prependTo($("#fx"))
     size = 1000
 
-    big = d3.superformula().type('star').size(size*50).segments(500)
+    big = d3.superformula().type('star').size(size*50).segments(400)
 
     $svg.append('path').attr('class', 'superf')
-    .attr('transform', 'translate(200,140)').attr('d', big)
+    .attr('transform', 'translate(0,140)').attr('d', big)
 
     lazy = () ->
       top = $(document).scrollTop()
       #if(top < 0) then return null
       $svg.select('.superf').transition().duration(2)
-      .attr('d', big.param('m', (top + 500)* .01)#.param('n1', top).param('a', top).param('b', top*100)
+      .attr('d', big.param('m', (top * .001) + 1200 * .008)#.param('n1', top).param('a', top).param('b', top*100)
       )
 
     lazy()
@@ -132,8 +136,9 @@ $ ()->
     width = $('body').outerWidth()
 
 
-    $svg = d3.select('body').append('svg').attr('width',width).attr('height', height)
-    $('svg').prependTo(document.body)
+    $svg = d3.select('body').selectAll('svg').datum([1,2,3,4,5])
+    #$svg.enter().append('svg').attr('width',width).attr('height', height)
+    #$('svg').prependTo(document.body)
     #data = (i for i in [0..height] by 10)
     #$svg.selectAll('.line').data(data).enter()
     #.append('line').attr('y1', (d) -> d).attr('y2', (d) -> d).attr('x1', 0).attr('x2', 10)
@@ -143,7 +148,7 @@ $ ()->
       $path.enter().append('path')
       $path.transition().duration(2000).attr('d', (d) -> line(d) + (if closePath  then 'Z' else '') )
 
-    draw()
+    #draw()
 
     setInterval () ->
       data = data.map (p) ->

@@ -4,8 +4,19 @@ body {
 }
 
 h1 {
-  font-size: 1.6em;
+  font-size: 1.7em;
   text-align: right;
+  margin-bottom: -1.5ex;
+
+  @media screen and (max-width:500px)
+  {
+    text-align: left;
+    margin-bottom: 2ex;
+  }
+  @media screen and (min-width:500px) {
+    margin-bottom: -1.5ex;
+    text-align: right;
+  }
 
   body.fancy & {
     text-align: right;
@@ -34,6 +45,22 @@ h3 {
 }
 a {
   color: #83C035;
+  @media print {
+    color: #69992b;
+    text-decoration: none;
+  }
+}
+
+.summary {
+  ul {
+    margin: auto 0 auto 0;
+    padding: 0;
+    li  {
+      margin: auto 0 1ex 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  }
 }
 
 .skills {
@@ -43,6 +70,7 @@ a {
     li {
       margin: 0; padding: 0 0 0 0 ;
       display: inline;
+      list-style-type: none;
       &.a {
         font-size: 140%;
       }
@@ -55,6 +83,14 @@ a {
         color:red;
       }
     }
+  }
+}
+
+section {
+  page-break-inside: auto;
+  .experience {
+    page-break-after: auto;
+    page-break-inside: avoid;
   }
 }
 
@@ -107,20 +143,48 @@ canvas {
   z-index: -1;
 }
 
-svg {
-  position: fixed;
-  bottom: -100px;
-  right: -200px;
-  z-index: -1;
-  //border: solid 1px #000000;
 
 
-  line {
-    stroke: black;
+@media screen and (max-width:999px){
+  #fx {
+    display: none;
   }
-  path {
-    stroke: rgba(247, 247, 247, 0.90);
-    stroke-width: 4px;
-    fill:none;
+
+}
+@media print {
+  #fx {
+    display: none;
   }
+}
+@media screen and (min-width:1000px){
+
+  #fx {
+    position: fixed;
+    top:-120px;
+    width: 100%;
+    bottom:0;
+    left: 0;
+    -webkit-box-reflect: right -100%;
+    z-index: -1;
+  }
+
+  svg {
+    position: absolute;
+    bottom: -100px;
+    left: -10px;
+    z-index: -1;
+    width:100%;
+    -webkit-box-reflect: below -60%;
+
+
+    line {
+      stroke: black;
+    }
+    path {
+      stroke: rgba(247, 247, 247, 0.45);
+      //stroke-width: 4px;
+      fill: rgba(247, 247, 247, 0.45);
+    }
+  }
+
 }

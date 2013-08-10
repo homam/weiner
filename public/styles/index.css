@@ -3,8 +3,21 @@ body {
   font-size: 1em;
 }
 h1 {
-  font-size: 1.6em;
+  font-size: 1.7em;
   text-align: right;
+  margin-bottom: -1.5ex;
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    text-align: left;
+    margin-bottom: 2ex;
+  }
+}
+@media screen and (min-width: 500px) {
+  h1 {
+    margin-bottom: -1.5ex;
+    text-align: right;
+  }
 }
 body.fancy h1 {
   text-align: right;
@@ -28,6 +41,21 @@ h3 {
 a {
   color: #83C035;
 }
+@media print {
+  a {
+    color: #69992b;
+    text-decoration: none;
+  }
+}
+.summary ul {
+  margin: auto 0 auto 0;
+  padding: 0;
+}
+.summary ul li {
+  margin: auto 0 1ex 0;
+  padding: 0;
+  list-style-type: none;
+}
 .skills .list {
   margin: 0 auto 0 auto;
   padding: 0;
@@ -37,6 +65,7 @@ a {
   margin: 0;
   padding: 0 0 0 0 ;
   display: inline;
+  list-style-type: none;
   -webkit-transition: .5s;
   -webkit-transform: rotate(0);
 }
@@ -48,6 +77,13 @@ a {
 }
 .skills .list li:hover {
   color: red;
+}
+section {
+  page-break-inside: auto;
+}
+section .experience {
+  page-break-after: auto;
+  page-break-inside: avoid;
 }
 article {
   margin: auto;
@@ -88,17 +124,39 @@ canvas {
   bottom: -150px;
   z-index: -1;
 }
-svg {
-  position: fixed;
-  bottom: -100px;
-  right: -200px;
-  z-index: -1;
+@media screen and (max-width: 999px) {
+  #fx {
+    display: none;
+  }
 }
-svg line {
-  stroke: black;
+@media print {
+  #fx {
+    display: none;
+  }
 }
-svg path {
-  stroke: rgba(247, 247, 247, 0.9);
-  stroke-width: 4px;
-  fill: none;
+@media screen and (min-width: 1000px) {
+  #fx {
+    position: fixed;
+    top: -120px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    -webkit-box-reflect: right -100%;
+    z-index: -1;
+  }
+  svg {
+    position: absolute;
+    bottom: -100px;
+    left: -10px;
+    z-index: -1;
+    width: 100%;
+    -webkit-box-reflect: below -60%;
+  }
+  svg line {
+    stroke: black;
+  }
+  svg path {
+    stroke: rgba(247, 247, 247, 0.45);
+    fill: rgba(247, 247, 247, 0.45);
+  }
 }
