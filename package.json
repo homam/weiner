@@ -1,5 +1,5 @@
 {
-  "name": "d3-timeseries",
+  "name": "homam-me",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,6 +9,6 @@
     "express": "3.1.0",
     "ejs": "*",
     "less-middleware": "*",
-     "connect-coffee-script":"*"
+    "connect-coffee-script":"*"
   }
 }
