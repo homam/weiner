@@ -26,7 +26,6 @@
     clientcss = piler.createCSSManager();
     clientcss.bind(app, srv);
     clientcss.addFile("public/styles/test.styl");
-    clientcss.addFile("public/styles/index.less");
     console.log(clientcss.renderTags());
     return this;
   };
