@@ -11,7 +11,7 @@
     "less-middleware": "*",
     "connect-coffee-script":"*",
     "stylus": "*",
-     "nib": "*",
+    "nib": "*",
     "piler": "*"
   }
 }
