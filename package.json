@@ -12,6 +12,7 @@
     "connect-coffee-script":"*",
     "stylus": "*",
     "nib": "*",
+    "less": "*",
     "piler": "*"
   }
 }
