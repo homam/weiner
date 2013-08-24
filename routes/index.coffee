@@ -8,6 +8,14 @@ exports.initialize = (_app,_srv,_piler) ->
   srv = _srv
   piler = _piler
   clientjs = piler.createJSManager()
+  clientjs.renderTagsDefer = (namespaces...) ->
+
+    tags = ""
+    for src in @getSources namespaces...
+      tags += @wrapInTag src[0], 'defer="defer"' +  (src[1] || '')
+      tags += "\n"
+    return tags
+
   clientjs.bind(app, srv);
   #clientjs.addFile("public/javascript/index.coffee")
   #clientjs.addUrl("http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js")
