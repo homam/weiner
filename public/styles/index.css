@@ -12,10 +12,28 @@ h3,
 h4 {
   font-family: Helvetica, Calibri, sans-serif;
 }
+a {
+  color: #83C035;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media print {
+  a {
+    color: #69992b;
+    text-decoration: none;
+  }
+}
+abbr.expand:before {
+  content: attr(title) ' (';
+}
+abbr.expand:after {
+  content: ')';
+}
 h1 {
   font-size: 1.7em;
   text-align: right;
-  margin-bottom: -1.5ex;
 }
 h1:after {
   bottom: -100%;
@@ -35,8 +53,12 @@ h1:after {
 }
 @media screen and (min-width: 500px) {
   h1 {
-    margin-bottom: -1.5ex;
     text-align: right;
+  }
+}
+@media print {
+  h1 {
+    margin-bottom: -1.3ex;
   }
 }
 body.fancy h1 {
@@ -58,15 +80,6 @@ h2:after {
 h3 {
   color: #D2833A;
 }
-a {
-  color: #83C035;
-}
-@media print {
-  a {
-    color: #69992b;
-    text-decoration: none;
-  }
-}
 .summary ul {
   margin: auto 0 auto 0;
   padding: 0;
@@ -83,11 +96,16 @@ a {
 }
 .skills .list li {
   margin: 0;
-  padding: 0 0 0 0 ;
-  display: inline;
+  padding: 0 0 0 0;
   list-style-type: none;
+  display: inline;
   -webkit-transition: .5s;
   -webkit-transform: rotate(0);
+}
+@media screen and (min-width: 400px) {
+  .skills .list li {
+    padding-right: .2em;
+  }
 }
 .skills .list li.a {
   font-size: 140%;
@@ -98,8 +116,22 @@ a {
 .skills .list li:hover {
   color: red;
 }
-section {
+article section {
   page-break-inside: auto;
+}
+article section:not(:first-of-type) {
+  margin-top: 4ex;
+}
+@media print {
+  article section {
+    margin-top: 4ex;
+  }
+}
+article section .experience:nth-child(4) {
+  page-break-inside: avoid;
+}
+article section.activities {
+  page-break-inside: avoid;
 }
 article {
   margin: auto;
@@ -116,6 +148,9 @@ article {
     margin: 0;
     padding-left: 1em;
   }
+}
+@media print {
+  
 }
 body.fancy h2:after {
   margin-top: 14px;
@@ -134,11 +169,6 @@ body.fancy .experience:nth-of-type(2n) {
   -webkit-transform: rotateZ(1deg);
   margin-top: 2em;
   margin-bottom: 2em;
-}
-canvas {
-  position: fixed;
-  bottom: -150px;
-  z-index: -1;
 }
 @media screen and (max-width: 999px) {
   #fx {

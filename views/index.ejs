@@ -8,10 +8,11 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link href="styles/index.css" type="text/css" rel="stylesheet" />
-
+        <%- css.renderTags() %>
 
     </head>
 <body class="">
+
     <div id="fx"></div>
     <article>
     <h1>Homam Hoseeini</h1>
@@ -20,24 +21,26 @@
         <h2>Summary</h2>
         <ul>
             <li data-skill="arch dev">
-                Software architect, experienced in distributed applications,
-                mobile apps and Web <abbr title="Rich Internet Application">RIA</abbr>s</li>
+                Software architect of distributed systems,
+                mobile apps and Web <abbr title="Rich Internet Applications">RIAs</abbr>.</li>
             <li data-skill="lead">
                 Product development manager of consumer faced internet applications,
                 leading mixed
-                teams of developers and designers using agile methodologies.</li>
+                teams of designers, developers and creative artists using agile methodologies.</li>
             <li data-skill="mobile dev games">
-                Experienced in mobile <abbr title="Value Added Services">VAS</abbr>,
+                Experienced in mobile <abbr class="expand" title="Value Added Services">VAS</abbr>,
                 micro payment, e-learning and casual game industries.</li>
             <li data-skill="data lead dev arch">
                 Deep grasp of information systems,
                 design patterns, requirements analysis, project management, Service Oriented Architecture,
-                data analysis, web and mobile development and functional programming.</li>
+                data analysis and visualization, cloud, databases, web and mobile development and programing.</li>
         </ul>
     </section>
     <section class="skills">
         <h2>Skills</h2>
-        <ul class="list"></ul>
+        <ul class="list">
+            <li class="a">.NET </li><li class="a">AJAX </li><li class="c">ActionScript </li><li class="a">Architecture </li><li class="a">C# </li><li class="a">CSS3 </li><li class="b">Canvas </li><li class="a">Casual Games </li><li class="b">Cloud Computing </li><li class="b">Data Visualization </li><li class="a">Distributed Syststems </li><li class="c">Flash </li><li class="a">Git </li><li class="a">HTML5 </li><li class="b">Haskell </li><li class="c">Java </li><li class="a">JavaScript </li><li class="a">MVC </li><li class="c">Mathematica </li><li class="b">Node.js </li><li class="b">Objective-C </li><li class="c">Python </li><li class="c">R </li><li class="c">Ruby </li><li class="a">SOA </li><li class="a">SQL </li><li class="b">SVG </li><li class="c">Scala </li><li class="a">Scrum </li><li class="b">Simulations </li><li class="b">XML </li>
+        </ul>
     </section>
     <section class="experiences">
         <h2>Experiences</h2>
@@ -53,13 +56,13 @@
             </p>
             <p data-skill="dev mobile games">
                 Mobitrans most prominent products have been developed under my direction;
-                <a href="http://www.vipgames.me">VIPgames.me</a>: a Web and mobile casual games portal, we were one of
+                <a target="_blank" href="http://www.vipgames.me">VIPgames.me</a>: a Web and mobile casual games portal, we were one of
                 the firsts that offered mobile HTML5 games;
-                <a href="http://www.babelbay.com">Babelbay.com</a>: a language learning service, providing 7 language courses
+                <a target="_blank" href="http://www.babelbay.com">Babelbay.com</a>: a language learning service, providing 7 language courses
                 in a dozen locales;
-                <a href="http://www.brain2train.com">Brain2train.com</a>: multi player trivia quiz mobile app;
+                <a target="_blank" href="http://www.brain2train.com">Brain2train.com</a>: multi player trivia quiz mobile app;
                 and the current flagship product of the company:
-                <a href="http://www.mobileacademy.com">MobileAcademy.com</a> that is a comprehensive m-learning suite.
+                <a target="_blank" href="http://www.mobileacademy.com">MobileAcademy.com</a> that is a comprehensive m-learning suite.
             </p>
             <p data-skill="dev lead biz">
                 My team has been the main driver of the company's accelerated growth.
@@ -126,45 +129,52 @@
             </p>
         </div>
         <div class="experience">
-            <h3>Freelance Projects</h3>
-            <div class="time">A long time ago, far far away</div>
+            <h3>My Own</h3>
             <p>
-                During university and high school years I have worked on a number of interesting software development
-                and web design projects including: an online toy store (for RENA in Tehran, one of the first online stores in Iran)
-                an online booklet store, an Astronomy Class Library, originally
-                a hobby project, transformed to a handy framework for astronomical computation using C++ and C#,
+                I'm a contributor to several open-source projects.
+            </p>
+            <p>
+                During university and high school years I had worked on several of software
+                and web design projects including: an online toy store (for RENA in Tehran)
+                an online booklet store, an Astronomy Class Library in C++ and C# that was originally
+                a hobby project but transformed into a handy framework for astronomical computation
                 plus a few other online stores and websites.
             <p>
-                I created ZoodFood, an online food delivery network that was made of a web interface and a number
-                of Windows clients connected to other nodes by .NET Remoting channels.
+                In 2004 I created ZoodFood, an online food delivery website that was made of a web interface and a number
+                of Windows clients connected to other nodes by .NET Remoting channels for real time communications.
             </p>
         </div>
     </section>
     <section class="activities">
         <h2>Other Activities</h2>
         <ul>
-            <li>Random Walk, Monte Carlo Simulation inn C# and Mathematica for some robotics projects and study
-                of the Brownian motion.</li>
+            <li>Random Walk, Monte Carlo Simulation in Mathematica and C# as part of my university project with application in
+                robotics and the study of the Brownian motion.</li>
             <li>Persian Calendar, my implementation of the calendar is precise over thousands of years and is
-                useful for historical date conversion purposes.</li>
+                suitable for historical date conversion purposes.</li>
             <li>Awarded Azad University’s Young Researcher Award, 2006</li>
-            <li>Speaker in astronomy seminars in Iran, including a weekly lecture in the university on astrophysics</li>
+            <li>Speaker in astronomy seminars in Iran, including a weekly lecture on astrophysics in my university.</li>
             <li>Science adviser to So Close So Far movie (Kheili Dour, Kheili Nazdik), winner of Crystal Simorgh Prize
                 (Iran's best picture)
-                for the Best Film in Fajr Film Festival</li>
-            <li>Worked with Night Sky live TV show as Special Effects Technician</li>
+                for the Best Film in Fajr Film Festival, 2004</li>
+            <li>Worked with Iran's Night Sky live TV show as a Special Effects Technician</li>
             <li>Astro Photography</li>
         </ul>
     </section>
     <section>
         <h2>Personal Information</h2>
         <div>Homam Hosseini</div>
-        <div class="twitter"><a href="//twitter.com/homam">@homam</a></div>
+        <div class="twitter"><a class="twitter" target="_blank" href="http://twitter.com/homam">@homam</a></div>
         <div><a href="tel:+971-555268287">+971-555268287</a</div>
         <div><a href="mailto:homam@live.com">homam@live.com</a></div>
-        <div><a href="//homam.me/cv">homam.me/cv</a></div>
+        <div><a target="_blank" href="http://homam.me/cv">homam.me/cv</a></div>
     </section>
     </article>
+    <div class="modal">
+        <a class="twitter-timeline" href="https://twitter.com/homam" data-widget-id="371210822388686848">@homam</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
 
     <%- (js.renderTagsDefer('libs',{disableGlobal:true})) %>
     <script src="javascript/index.js" defer="defer"></script>

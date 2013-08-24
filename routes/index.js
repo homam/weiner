@@ -39,7 +39,7 @@
     console.log(clientjs.renderTags());
     clientcss = piler.createCSSManager();
     clientcss.bind(app, srv);
-    clientcss.addFile("public/styles/test.styl");
+    clientcss.addFile("public/styles/fx.styl");
     console.log(clientcss.renderTags());
     return this;
   };
@@ -47,7 +47,8 @@
   exports.index = function(req, res) {
     return res.render('index', {
       title: 'Hello World!',
-      js: clientjs
+      js: clientjs,
+      css: clientcss
     });
   };
 

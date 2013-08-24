@@ -1,18 +1,40 @@
 body {
   font: normal 12pt/20pt "Georgia Pro",georgia,serif; // Helvetica, Calibri, sans-serif;
   @media print {
-    font-family: normal 11pt/18pt "Georgia Pro",georgia,serif
+    font-family: normal 11pt/18pt "Georgia Pro",georgia,serif;
   }
 }
+
+
 
 h1,h2,h3,h4{
   font-family: Helvetica, Calibri, sans-serif;
 }
 
+a {
+  color: #83C035;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+  @media print {
+    color: #69992b;
+    text-decoration: none;
+  }
+}
+
+abbr.expand {
+  &:before {
+    content: attr(title) ' (';
+  }
+  &:after {
+    content: ')';
+  }
+}
+
 h1 {
   font-size: 1.7em;
   text-align: right;
-  margin-bottom: -1.5ex;
 
   &:after {
     bottom: -100%;
@@ -31,8 +53,11 @@ h1 {
     margin-bottom: 2ex;
   }
   @media screen and (min-width:500px) {
-    margin-bottom: -1.5ex;
     text-align: right;
+  }
+
+  @media print {
+    margin-bottom: -1.3ex;
   }
 
   body.fancy & {
@@ -60,13 +85,7 @@ h2:after {
 h3 {
   color: #D2833A;
 }
-a {
-  color: #83C035;
-  @media print {
-    color: #69992b;
-    text-decoration: none;
-  }
-}
+
 
 .summary {
   ul {
@@ -85,17 +104,25 @@ a {
     margin:0 auto 0 auto; padding: 0;
     text-align: justify;
     li {
-      margin: 0; padding: 0 0 0 0 ;
-      display: inline;
+      margin: 0;
+      padding: 0 0 0 0;
       list-style-type: none;
+      display: inline;
+      -webkit-transition: .5s;
+      -webkit-transform: rotate(0);
+      @media screen and (min-width: 400px) {
+//        white-space: nowrap;
+//        word-wrap: break-word;
+//        display: inline-block;
+//        padding-right: .3em;
+          padding-right: .2em;
+      }
       &.a {
         font-size: 140%;
       }
       &.b {
         font-size: 120%;
       }
-      -webkit-transition: .5s;
-      -webkit-transform: rotate(0);
       &:hover {
         color:red;
       }
@@ -103,11 +130,23 @@ a {
   }
 }
 
-section {
+article section {
   page-break-inside: auto;
+  &:not(:first-child){
+    margin-top: 40ex;
+  }
+  @media print {
+    margin-top: 4ex;
+  }
   .experience {
     //page-break-after: auto;
     //page-break-inside: avoid;
+  }
+  .experience:nth-child(4) {
+    page-break-inside: avoid;
+  }
+  &.activities {
+    page-break-inside: avoid;
   }
 }
 
@@ -127,6 +166,10 @@ article {
     margin: 0;
     padding-left: 1em;
   }
+}
+
+@media print {
+
 }
 
 
@@ -153,11 +196,6 @@ body.fancy {
     margin-bottom: 2em;
   }
 
-}
-
-canvas {
-  position: fixed;bottom: -150px;
-  z-index: -1;
 }
 
 
@@ -205,3 +243,4 @@ canvas {
   }
 
 }
+
