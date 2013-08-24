@@ -6,12 +6,7 @@
         <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <script src="javascript/libs/jquery2.js"></script>
-        <script src="javascript/libs/d3.js"></script>
-        <script src="javascript/libs/superformula.js"></script>
-        <script src="javascript/libs/underscore.js"></script>
 
-        <script src="javascript/index.js"></script>
         <link href="styles/index.css" type="text/css" rel="stylesheet" />
 
 
@@ -55,13 +50,17 @@
             </p>
             <p data-skill="dev mobile games">
                 Mobitrans most prominent products have been developed under my direction;
-                VIPgames.com: a Web and mobile casual gaming portal, Babelbay.com: a language learning service,
-                Brain2train: multi player trivia quiz mobile app, and
-                the current flagship product of the company: Mobile Academy that is a m-learning suit.
+                <a href="http://www.vipgames.me">VIPgames.me</a>: a Web and mobile casual games portal, we were one of
+                the firsts that offered mobile HTML5 games;
+                <a href="http://www.babelbay.com">Babelbay.com</a>: a language learning service, providing 7 language courses
+                in a dozen locales;
+                <a href="http://www.brain2train.com">Brain2train.com</a>: multi player trivia quiz mobile app;
+                and the current flagship product of the company:
+                <a href="http://www.mobileacademy.com">MobileAcademy.com</a> that is a comprehensive m-learning suite.
             </p>
             <p data-skill="dev lead biz">
                 My team has been the main driver of the company's accelerated growth.
-                I developed new sale channels, enhanced the micro payment methods
+                I developed new sale channels, enhanced our micro payment methods
                 by improving the user experience, performance and the opt-in methods.
                 I led our marketing efforts by producing the advertisement materials,
                 campaign data analysis and enhancements.
@@ -163,5 +162,8 @@
         <div><a href="//homam.me/cv">homam.me/cv</a></div>
     </section>
     </article>
+
+    <%- (js.renderTagsDefer('libs',{disableGlobal:true})) %>
+    <script src="javascript/index.js" defer="defer"></script>
 </body>
 </html>

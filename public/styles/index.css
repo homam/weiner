@@ -1,6 +1,16 @@
 body {
+  font: normal 12pt/20pt "Georgia Pro", georgia, serif;
+}
+@media print {
+  body {
+    font-family: normal 0.6111111111111112pt "Georgia Pro", georgia, serif;
+  }
+}
+h1,
+h2,
+h3,
+h4 {
   font-family: Helvetica, Calibri, sans-serif;
-  font-size: 1em;
 }
 h1 {
   font-size: 1.7em;
@@ -90,10 +100,6 @@ a {
 }
 section {
   page-break-inside: auto;
-}
-section .experience {
-  page-break-after: auto;
-  page-break-inside: avoid;
 }
 article {
   margin: auto;

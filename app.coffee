@@ -28,28 +28,14 @@ app.use require('connect-coffee-script')
   bare: true
 
 
-clientjs = piler.createJSManager()
-clientjs.bind(app, srv);
-clientjs.addFile("public/javascript/index.coffee")
-#clientjs.addUrl("http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js")
-['jquery2.js','d3.js','superformula.js','underscore.js'].forEach (f) ->
-  clientjs.addFile("libs", "public/javascript/libs/#{f}")
-#clientjs.addOb({ VERSION: "1.0.0" });
-
-console.log clientjs.renderTags("libs")
-console.log clientjs.renderTags()
-
-
-clientcss = piler.createCSSManager();
-clientcss.bind(app,srv)
-clientcss.addFile("public/styles/test.styl")
-clientcss.addFile("public/styles/index.less")
-console.log clientcss.renderTags()
 
 
 app.use express.static __dirname + '/public'
 
-app.get '/', (require './routes').index
+indexRoute = (require './routes')
+indexRoute.initialize(app, srv, piler)
+
+app.get '/', indexRoute.index
 app.get '/super', (require './routes').super
 
 
