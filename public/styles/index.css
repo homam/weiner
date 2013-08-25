@@ -150,7 +150,9 @@ article {
   }
 }
 @media print {
-  
+  .social.google {
+    display: none;
+  }
 }
 body.fancy h2:after {
   margin-top: 14px;

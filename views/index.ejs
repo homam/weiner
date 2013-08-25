@@ -1,21 +1,22 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Homam Hosseini</title    >
-        <meta charset="utf-8" />
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<head>
+    <title>Homam Hosseini</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Head of Products at Mobitrans; Homam is a software architect and developer, experienced in mobile, advergaming, data visualization and distributed systems."/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 
-        <link href="styles/index.css" type="text/css" rel="stylesheet" />
-        <%- css.renderTags() %>
-
-    </head>
+    <link href="styles/index.css" type="text/css" rel="stylesheet" />
+    <%- css.renderTags() %>
+</head>
 <body class="">
 
     <div id="fx"></div>
-    <article>
-    <h1>Homam Hoseeini</h1>
+
+    <article itemscope itemtype="http://schema.org/Person">
+    <h1 itemprop="name">Homam Hoseeini</h1>
 
     <section class="summary">
         <h2>Summary</h2>
@@ -45,7 +46,7 @@
     <section class="experiences">
         <h2>Experiences</h2>
         <div class="experience">
-            <h3>Head of Products at Mobitrans</h3>
+            <h3 itemprop="jobTitle">Head of Products at Mobitrans</h3>
             <div class="time">April 2010 onward</div>
             <p class="company">
                 Mobitrans is the leading digital marketing and distribution services company with focus on emerging markets.
@@ -82,9 +83,9 @@
             <h3>Director of Product Development at RENA Dubai</h3>
             <div class="time">May 2007 - April 2010</div>
             <p>
-                As one of the founders, I was responsible for product development.
+                As one of the founders, I was handling the product development.
 
-                I developed RENA's award winning product: Hyzonia that was an on-demand, customizable
+                I developed RENA's award winning product: Hyzonia: an on-demand, customizable
                 massively multiplayer online game creation engine with built-in product placement advertising tools.
             </p>
             <p>
@@ -92,30 +93,32 @@
                 architecture that was made of tens of distributed online apps and made the extension points and a RESTful API.
             </p>
             <p>
-                I contributed to the design and development of the advergames,
+                I contributed to the game design the advergames,
                 worked with <abbr title="User Experience">UX</abbr> designers on creating the
                 <abbr title="User Interface">UI</abbr> and the <abbr title="Visual Effects">VFX</abbr> and
-                guided the team in developing a highly dynamic UX on Web using advanced JavaScript and cutting-edge
-                techniques.
-                I created a real-time cross browser communication channel for live user interactions,
-                programmed bots and software to simulate the virtual world's economy.
+                guided the team in overcomin the technical obstacles of developing highly dynamic UX on the Web
+                using advanced JavaScript and cutting-edge techniques.
             </p>
             <p>
-                I met with the customers and investors, helped in drafting the business plan, laid out and executed our
-                successful social media strategy.
+                I created a real-time cross browser communication channel for live user interactions,
+                and programmed a bot and the software to simulate the virtual world's economy.
+            </p>
+            <p>
+                I assisted in drafting the business plan, delivered sales pitch to the customers and investors,
+                and laid out and executed our successful social media strategy.
             </p>
         </div>
         <div class="experience">
             <h3>Associate Editor at Nojum Magazine</h3>
             <div class="time">2001 - 2008</div>
             <p>
-                I started working at Nojum (astronomy) magazine and its parent company (Zarvan) when I was a high school student.
-                I published dozens of articles, helped the company build its website and maintain a robust online presence,
-                and also modernized the IT department by introducing new tools and software.
+                I started working at Nojum (astronomy) magazine and its parent company (Zarvan) when I was a junior high school student.
+                I published dozens of articles, helped the company to maintain a robust online presence,
+                and modernized the IT department by introducing new tools and software.
             </p>
             <ul>
                 <li><strong>Webcasting</strong> of astronomy events (eclipses and planetary transits) to tens of thousands of concurrent online audience.
-                    I collected the team, created the capture and streaming software.</li>
+                    I collected the team, created the capture and streaming software and led the operations during the live events.</li>
                 <li><strong>Data Visualization</strong> of <abbr title="Geographic Information System">GIS</abbr> data
                     for projecting asteroid occultation graze maps, I developed a cross browser
                     <abbr title="Scalable Vector Graphics">SVG</abbr>/<abbr title="Vector Markup Language">VML</abbr> online planetarium sky map.</li>
@@ -125,7 +128,7 @@
                  </li>
             </ul>
             <p>
-                I had a monthly column featuring my maps and visualizations for amateure astronomers use.
+                I had a monthly column featuring my maps and visualizations for amateur astronomers.
             </p>
         </div>
         <div class="experience">
@@ -134,7 +137,7 @@
                 I'm a contributor to several open-source projects.
             </p>
             <p>
-                During university and high school years I had worked on several of software
+                During my university and high school years I had worked on a number of software
                 and web design projects including: an online toy store (for RENA in Tehran)
                 an online booklet store, an Astronomy Class Library in C++ and C# that was originally
                 a hobby project but transformed into a handy framework for astronomical computation
@@ -164,12 +167,14 @@
     <section>
         <h2>Personal Information</h2>
         <div>Homam Hosseini</div>
-        <div class="twitter"><a class="twitter" target="_blank" href="http://twitter.com/homam">@homam</a></div>
-        <div><a href="tel:+971-555268287">+971-555268287</a</div>
-        <div><a href="mailto:homam@live.com">homam@live.com</a></div>
-        <div><a target="_blank" href="http://homam.me/cv">homam.me/cv</a></div>
+        <div class="twitter"><a rel="me" itemprop="url" class="twitter" target="_blank" href="http://twitter.com/homam">@homam</a></div>
+        <div><a rel="me" itemprop="telephone" href="tel:+971-555268287">+971-555268287</a</div>
+        <div><a rel="me" itemprop="email" href="mailto:homam@live.com">homam@live.com</a></div>
+        <div class="social"><a rel="me" itemprop="url" target="_blank" href="http://homam.me/cv">homam.me/cv</a></div>
+        <div class="social google"><a rel="author" href="https://plus.google.com/106168197386890589409?rel=author"></a></div>
     </section>
     </article>
+
     <div class="modal">
         <a class="twitter-timeline" href="https://twitter.com/homam" data-widget-id="371210822388686848">@homam</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
