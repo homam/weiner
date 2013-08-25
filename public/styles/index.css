@@ -107,6 +107,11 @@ h3 {
     padding-right: .2em;
   }
 }
+@media print {
+  .skills .list li {
+    padding-right: 0.35em;
+  }
+}
 .skills .list li.a {
   font-size: 140%;
 }
