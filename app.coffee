@@ -36,6 +36,8 @@ indexRoute = (require './routes')
 indexRoute.initialize(app, srv, piler)
 
 app.get '/', indexRoute.index
+app.get '/cv', indexRoute.index
+app.get '//cv', indexRoute.index
 app.get '/super', (require './routes').super
 
 

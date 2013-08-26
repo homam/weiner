@@ -46,7 +46,7 @@
 
   exports.index = function(req, res) {
     return res.render('index', {
-      title: 'Hello World!',
+      title: 'Homam Hosseini',
       js: clientjs,
       css: clientcss
     });

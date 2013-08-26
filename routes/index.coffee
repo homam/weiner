@@ -40,7 +40,7 @@ exports.initialize = (_app,_srv,_piler) ->
 
 exports.index = (req, res) ->
   res.render 'index',
-    title: 'Hello World!'
+    title: 'Homam Hosseini'
     js: clientjs
     css: clientcss
 

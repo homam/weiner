@@ -51,6 +51,10 @@
 
   app.get('/', indexRoute.index);
 
+  app.get('/cv', indexRoute.index);
+
+  app.get('//cv', indexRoute.index);
+
   app.get('/super', (require('./routes'))["super"]);
 
   console.log('express starting ...');

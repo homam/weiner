@@ -109,7 +109,7 @@ h3 {
 }
 @media print {
   .skills .list li {
-    padding-right: 0.35em;
+    padding-right: 0.15em;
   }
 }
 .skills .list li.a {
