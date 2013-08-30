@@ -1,0 +1,51 @@
+#viewport
+  position: fixed
+  top:0
+  right:0
+  left:0
+  bottom:0
+ul
+  margin: 0
+  padding: 0
+
+li
+  list-style: none;
+  display:block
+  width:200px
+  height:40px
+  text-align:center
+  position:fixed
+  top:50%
+  left:50%
+  margin-left:-100px
+  margin-top:-20px
+  &:nth-child(1)
+    top:30%
+    left:20%
+  &:nth-child(2)
+    top:30%
+    left:80%
+  &:nth-child(4)
+    top:70%
+    left:20%
+  &:nth-child(5)
+    top:70%
+    left:80%
+  a
+    display:none
+
+a
+  text-decoration: none
+  color: blue
+
+
+body
+  font: normal 20pt/20pt Helvetica, Calibri, sans-serif;
+  background-color:black
+
+circle
+  fill: rgba(255, 255, 255, 1)
+path
+  stroke: rgba(255, 255, 255, 0.43)
+  stroke-width: 5px
+  fill:none
