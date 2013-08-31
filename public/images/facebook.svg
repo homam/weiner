@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="596px"
-	 height="595.281px" viewBox="123.445 0 596 595.281"
-	 enable-background="new 123.445 0 596 595.281" xml:space="preserve">
-    <path xmlns="http://www.w3.org/2000/svg"
-    style="fill:black;stroke:black"
-    d="M66,104c-6.627,0-12,5.373-12,12s5.373,12,12,12s12-5.373,12-12S72.627,104,66,104z M69.044,117H67c0,3,0,7,0,7h-3   c0,0,0-4,0-7h-1v-3h1v-1.127c0-1.163,0.469-2.979,2.896-2.979l2.104,0.01V112c0,0-1.063,0-1.322,0S67,112.468,67,113.021V114h2.302   L69.044,117z"/>
-</svg>
+<?xml version="1.0" encoding="utf-8"?> <!-- Generator: IcoMoon.io --> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g><path d="M 71.984,128L 48,128 L 48,64 l-16,0 l0-22.056 l 16-0.007l-0.026-12.994C 47.974,10.948, 52.853,0, 74.049,0l 17.647,0 l0,22.061 l-11.029,0 c-8.254,0-8.651,3.082-8.651,8.835l-0.033,11.040l 19.836,0 l-2.338,22.056L 72,64L 71.984,128z"></path></g></svg>
