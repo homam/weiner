@@ -94,6 +94,11 @@ h3 {
   padding: 0;
   text-align: justify;
 }
+@media screen and (min-width: 400px) {
+  .skills .list {
+    font-size: .9em;
+  }
+}
 .skills .list li {
   margin: 0;
   padding: 0 0 0 0;
