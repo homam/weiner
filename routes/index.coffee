@@ -51,6 +51,7 @@ exports.cv = (req, res) ->
     title: 'Homam Hosseini'
     js: cvJs
     css: cvCss
+    ed: true
 
 exports.super = (req,res) ->
   res.render 'super',

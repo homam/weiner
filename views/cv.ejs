@@ -29,10 +29,14 @@
                 leading mixed
                 teams of designers, developers and creative artists using agile methodologies.</li>
             <li data-skill="mobile dev games">
-                Experienced in mobile <abbr class="expand" title="Value Added Services">VAS</abbr>,
+                Experienced in mobile Value Added Services,
                 micro payment, e-learning and casual game industries.</li>
+            <li data-skills="dev data">
+                Strongly interested with a significant background in data-driven approaches, predictive modeling,
+                data visualization and and functional programming.
+            </li>
             <li data-skill="data lead dev arch">
-                Deep grasp of information systems,
+                Deep grasp of front-end development,
                 design patterns, requirements analysis, project management, Service Oriented Architecture,
                 data analysis and visualization, cloud, databases, web and mobile development and programing.</li>
         </ul>
@@ -40,7 +44,7 @@
     <section class="skills">
         <h2>Skills</h2>
         <ul class="list">
-            <li class="a">.NET </li><li class="a">AJAX </li><li class="c">ActionScript </li><li class="a">Architecture </li><li class="a">C# </li><li class="a">CSS3 </li><li class="b">Canvas </li><li class="a">Casual Games </li><li class="b">Cloud Computing </li><li class="b">Data Visualization </li><li class="a">Distributed Syststems </li><li class="c">Flash </li><li class="a">Git </li><li class="a">HTML5 </li><li class="b">Haskell </li><li class="c">Java </li><li class="a">JavaScript </li><li class="a">MVC </li><li class="c">Mathematica </li><li class="b">Node.js </li><li class="b">Objective-C </li><li class="c">Python </li><li class="c">R </li><li class="c">Ruby </li><li class="a">SOA </li><li class="a">SQL </li><li class="b">SVG </li><li class="c">Scala </li><li class="a">Scrum </li><li class="b">Simulations </li><li class="b">XML </li>
+            <li class="a">.NET </li><li class="c">ActionScript </li><li class="a">AJAX </li><li class="a">Architecture </li><li class="a">C# </li><li class="b">Canvas </li><li class="a">Casual Games </li><li class="b">Cloud Computing </li><li class="a">CSS3 </li><li class="a">d3 </li><li class="b">Data Visualization </li><li class="a">Distributed Syststems </li><li class="a">Git </li><li class="b">Haskell </li><li class="a">HTML5 </li><li class="c">Java </li><li class="a">JavaScript </li><li class="c">Mathematica </li><li class="a">MVC </li><li class="b">Node.js </li><li class="b">Objective-C </li><li class="c">Python </li><li class="c">R </li><li class="c">Ruby </li><li class="c">Scala </li><li class="a">Scrum </li><li class="b">Simulations </li><li class="a">SOA </li><li class="a">SQL </li><li class="b">SVG </li><li class="b">XML </li>
         </ul>
     </section>
     <section class="experiences">
@@ -132,7 +136,7 @@
             </p>
         </div>
         <div class="experience">
-            <h3>My Own</h3>
+            <h3>And...</h3>
             <p>
                 I'm a contributor to several open-source projects.
             </p>
@@ -148,36 +152,30 @@
             </p>
         </div>
     </section>
-	<section class="activities" data-wed>
+    <% if (ed) {%>
+	<section class="activities">
 		<h2>Education</h2>
 		<p>
-			BSc. Physics, Tehran Azad University, 2007.
+			BSc. in Physics, Azad University of Tehran (2007)
 		</p>
 		<p>
 			Notable activities:
 		</p>
 		<ul>
-			<li>Random Walk, Monte Carlo Simulation in Mathematica and C# as part of my university project with application in
-                robotics and the study of the Brownian motion.</li>
-            <li>Persian Calendar, my implementation of the calendar is precise over thousands of years and is
-                suitable for historical date conversion purposes.</li>
-            <l>Awarded Azad University’s Young Researcher Award, 2006</li>
-            <li>Speaker in astronomy seminars in Iran, including a weekly lecture on astrophysics in my university.</li>
+            <%- include parts/ed-activities.ejs %>
 		</ul>
 	</section>
+    <% } %>
     <section class="activities">
         <h2>Other Activities</h2>
         <ul>
-            <li data-ned>Random Walk, Monte Carlo Simulation in Mathematica and C# as part of my university project with application in
-                robotics and the study of the Brownian motion.</li>
-            <li data-ned>Persian Calendar, my implementation of the calendar is precise over thousands of years and is
-                suitable for historical date conversion purposes.</li>
-            <li data-ned>Awarded Azad University’s Young Researcher Award, 2006</li>
-            <li data-ned>Speaker in astronomy seminars in Iran, including a weekly lecture on astrophysics in my university.</li>
-            <li>Science adviser to So Close So Far movie (Kheili Dour, Kheili Nazdik), winner of Crystal Simorgh Prize
+            <% if (!ed) { %>
+            <%- include parts/ed-activities.ejs %>
+            <% } %>
+            <li>Science adviser to So Close So Far movie (Kheili Dour, Kheili Nazdik), winner of Crystal Simorgh
                 (Iran's best picture)
                 for the Best Film in Fajr Film Festival, 2004</li>
-            <li>Worked with Iran's Night Sky live TV show as a Special Effects Technician</li>
+            <li>Worked as a Special Effects Technician for Night Sky live TV show in Iran</li>
             <li>Astro Photography</li>
         </ul>
     </section>

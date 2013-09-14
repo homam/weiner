@@ -5,18 +5,21 @@ $ ()->
   ) navigator.userAgent or navigator.vendor or window.opera
 
   skills = [
-    ['.NET', 'AJAX', 'MVC', 'C#', 'CSS3', 'Casual Games', 'Distributed Syststems', 'Architecture',
+    ['.NET', 'AJAX', 'd3', 'MVC', 'C#', 'CSS3', 'Casual Games', 'Distributed Syststems', 'Architecture',
       'Scrum', 'SOA', 'SQL', 'Git', 'JavaScript', 'HTML5'],
     ['Cloud Computing', 'Simulations', 'Haskell', 'Canvas', 'SVG', 'Objective-C', 'Node.js', 'Data Visualization', 'XML'],
-    ['ActionScript', 'Flash', 'Mathematica', 'Python', 'Ruby', 'R', 'Java', 'Scala']
+    ['ActionScript', 'Mathematica', 'Python', 'Ruby', 'R', 'Java', 'Scala']
   ]
-
   skills = _(skills.map((s,i) -> s.map (a) -> {name: a, size: i})).flatten()
-  skills = skills.sort (a, b) -> if a.name > b.name then 1 else -1
+  skills = skills.sort (a, b) -> if a.name.toLowerCase() > b.name.toLowerCase() then 1 else -1
+
+  #d3.select('.skills .list').html('')
+
+  console.log skills
 
   $skill = d3.select('.skills .list').selectAll('li').data(skills)
-  .enter().append('li')
-  .text((s) -> s.name + ' ').attr('class', (s) -> ['a', 'b', 'c'][s.size])
+  $skill.enter().append('li')
+  $skill.text((s) -> s.name + ' ').attr('class', (s) -> ['a', 'b', 'c'][s.size])
 
   if navigator.userAgent.match(/(iPad|iPhone|iPod)/g)
     $('a.twitter').attr('href', 'twitter://user?screen_name=homam').attr('target', null )

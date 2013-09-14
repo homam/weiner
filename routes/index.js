@@ -57,7 +57,8 @@
     return res.render('cv', {
       title: 'Homam Hosseini',
       js: cvJs,
-      css: cvCss
+      css: cvCss,
+      ed: true
     });
   };
 
